@@ -36,7 +36,7 @@
             <td style="width: 16.6667%; height: 18px;">&nbsp;<input type="date" /></td>
             <td style="width: 16.6667%; height: 18px;">Enc.time</td>
             <td style="width: 14.536%; height: 18px;">&nbsp;<input type="time" /></td>
-            <td style="width: 18.7974%; height: 18px;">Enc.place</td>
+            <td style="width: 18.7974%; height: 18px;">Enc.clinic</td>
             <td style="width: 16.6667%; height: 18px;">&nbsp;<input type="text" /></td>
         </tr>
         <tr style="height: 18px;">

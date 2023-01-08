@@ -47,7 +47,7 @@ class AppointmentController extends Controller
                 'date' => 'required|date',
                 'hour' => 'required',
                 'clinic' => 'required|string',
-                'physician' => 'required|string',
+                'optimimstic' => 'required|string',
                 'name' => 'required|string',
             ]);
             $appointment = Appointment::create([
@@ -56,12 +56,12 @@ class AppointmentController extends Controller
                 'note' => $request->note,
                 'hour' => $request->hour,
                 'clinic' => $request->clinic,
-                'physician' => $request->physician,
+                'optimimstic' => $request->optimimstic,
                 'name' => $request->name
             ]);
             return redirect()->back()->with('success', 'تم اضافة موعد جديد');
         } catch (Exception $ex) {
-
+            return $ex;
             return redirect()->back()->with('error', 'المريض غير موجود يرجى اضافته');
         }
     }
@@ -106,7 +106,7 @@ class AppointmentController extends Controller
                 'customer_id' => 'required|exists:customers,personal_id',
                 'date' => 'required|date',
                 'clinic' => 'required|string',
-                'physician' => 'required|string',
+                'optimimstic' => 'required|string',
                 'name' => 'required|string',
                 'hour'=>'required',
 
@@ -118,7 +118,7 @@ class AppointmentController extends Controller
                 'date' => $request->date,
                 'note' => $request->note,
                 'clinic' => $request->clinic,
-                'physician' => $request->physician,
+                'optimimstic' => $request->optimistic,
                 'name' => $request->name,
                 'hour' => $request->hour,
 

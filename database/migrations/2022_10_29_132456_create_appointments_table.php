@@ -22,7 +22,7 @@ return new class extends Migration
             ->onDelete('cascade');
             $table->date('date');
             $table->string('clinic');
-            $table->string('physician');
+            $table->string('optimimstic');
             $table->text('note')->nullable();
             $table->time('hour')->unique();
             $table->timestamps();

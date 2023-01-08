@@ -25,7 +25,7 @@
                         <div class="col-md-12  ">
                             <div class="card ">
                                 <div class="card-header text-center">
-                                    <h4 class="card-title text-center" id="basic-layout-form"> إضافة مالية  </h4>
+                                    <h4 class="card-title text-center" id="basic-layout-form"> add finance   </h4>
                                     <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
                                         <ul class="list-inline mb-0">
@@ -42,11 +42,11 @@
                                             enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-body">
-                                                <h4 class="form-section"><i class="ft-home"></i> بيانات المالية </h4>
+                                                <h4 class="form-section"><i class="ft-home"></i> finance details  </h4>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">رقم الهوية  </label>
+                                                            <label for="projectinput1">national id   </label>
                                                             <input type="text" value="" id="customer_id"
                                                                 class="form-control"
                                                                 name="customer_id">
@@ -58,7 +58,7 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">رقم الفحص</label>
+                                                            <label for="projectinput1">test id </label>
                                                             <input type="text" value="" id="test_id"
                                                                 class="form-control"
                                                                 name="test_id">
@@ -71,7 +71,7 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">المبلغ </label>
+                                                            <label for="projectinput1">amount </label>
                                                             <input type="text" value="" id="amount"
                                                                 class="form-control"
                                                                 name="amount">
@@ -83,7 +83,7 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">التاريخ </label>
+                                                            <label for="projectinput1">date </label>
                                                             <input type="date" value="" id="date"
                                                                 class="form-control"
                                                                 name="date">
@@ -97,7 +97,7 @@
 
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="projectinput1">ملاحظات </label>
+                                                        <label for="projectinput1">notes </label>
                                                         <textarea type="text" value="" id="note"
                                                             class="form-control"
                                                             name="note"></textarea>
@@ -130,10 +130,10 @@
                                     <div class="form-actions">
 
                                         <button type="submit" class="btn btn-primary">
-                                            <i class="la la-check-square-o"></i> حفظ
+                                            <i class="la la-check-square-o"></i> save
                                         </button>
                                         <a href="{{route('admin.finance')}}"> <button type="button" class="btn btn-warning " >
-                                            المالية
+                                            finance
                                             </button></a>
                                     </div>
                                 </form>

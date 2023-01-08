@@ -47,12 +47,12 @@
 
 
                                             <div class="form-body">
-                                                <h4 class="form-section"><i class="ft-home"></i> بيانات الموعد </h4>
+                                                <h4 class="form-section"><i class="ft-home"></i>  appointment details </h4>
 
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">رقم الهوية </label>
+                                                            <label for="projectinput1">national id  </label>
                                                             <input type="text" value="{{$appoin->customer->personal_id}}" id="customer_id"
                                                                 class="form-control" name="customer_id">
                                                             @error('customer_id')
@@ -62,7 +62,7 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">الاسم </label>
+                                                            <label for="projectinput1">name </label>
                                                             <input type="text" value="{{$appoin->name}}" id="date"
                                                                 class="form-control" name="name">
                                                             @error('name')
@@ -76,7 +76,7 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">التاريخ </label>
+                                                            <label for="projectinput1">date </label>
                                                             <input type="date" value="{{$appoin->date}}" id="date"
                                                                 class="form-control" name="date">
                                                             @error('date')
@@ -86,7 +86,7 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">الساعة </label>
+                                                            <label for="projectinput1">hour </label>
                                                             <input type="time" value="{{$appoin->hour}}" id=""
                                                                 class="form-control" name="hour">
                                                             @error('hour')
@@ -103,7 +103,7 @@
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">العيادة </label>
+                                                            <label for="projectinput1">clinic </label>
                                                             <input type="text" value="{{$appoin->clinic}}" id=""
                                                                 class="form-control" name="clinic">
                                                             @error('clinic')
@@ -113,17 +113,17 @@
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">المعالج </label>
-                                                            <input type="text" value="{{$appoin->physician}}" id=""
-                                                            class="form-control" name="physician">
-                                                            @error('physician')
+                                                            <label for="projectinput1">optimistic </label>
+                                                            <input type="text" value="{{$appoin->optimimstic}}" id=""
+                                                            class="form-control" name="optimimstic">
+                                                            @error('optimimstic')
                                                                 <span class="text-danger">{{ $message }}</span>
                                                             @enderror
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">ملاحظات </label>
+                                                            <label for="projectinput1">notes </label>
                                                             <textarea type="text" value="{{$appoin->note}}" id="note" class="form-control" name="note"></textarea>
                                                             @error('note')
                                                                 <span class="text-danger">{{ $message }}</span>

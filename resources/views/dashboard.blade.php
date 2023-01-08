@@ -136,7 +136,7 @@
                                     <i class="fas fa-times"></i>
                                 </button>
                             </div>
-                            <h3 class="card-title"> اخر المرضى
+                            <h3 class="card-title"> latest  patient
                             </h3>
                         </div>
                         <!-- /.card-header -->
@@ -148,8 +148,8 @@
 
                                 <tr>
                                     <th>#</th>
-                                    <th>الاسم</th>
-                                    <th>رقم الهوية</th>
+                                    <th>name</th>
+                                    <th>national id </th>
 
 
 
@@ -184,7 +184,7 @@
                                     <i class="fas fa-times"></i>
                                 </button>
                             </div>
-                            <h3 class="card-title"> اخر الفحوصات
+                            <h3 class="card-title"> latest tests
                             </h3>
                         </div>
                         <!-- /.card-header -->
@@ -197,8 +197,8 @@
 
                                 <tr dir="rtl">
 
-                                    <th>رقم الفحص</th>
-                                    <th>رقم الهوية</th>
+                                    <th> national id</th>
+                                    <th>added by</th>
 
                                 </tr>
                             </thead>
@@ -206,8 +206,8 @@
 
                                 @foreach ($tests as $key => $test)
                                     <tr>
-                                        <td>{{ $test->id }}</td>
                                         <td>{{ $test->customer->personal_id }}</td>
+                                        <td>{{$test->addedBy}}</td>
                                     </tr>
                                 @endforeach
                             </tbody>

@@ -53,12 +53,12 @@
 
 
                                             <div class="form-body">
-                                                <h4 class="form-section"><i class="ft-home"></i> بيانات المريض </h4>
+                                                <h4 class="form-section"><i class="ft-home"></i>  patient details </h4>
 
                                                 <div class="row">
                                                     <div class="col-md-4">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">الاسم </label>
+                                                            <label for="projectinput1">name </label>
                                                             <input type="text" value="{{ $customer->name }}"
                                                                 id="name" class="form-control"
                                                                 placeholder="ادخل اسم المريض  " name="name">
@@ -70,7 +70,7 @@
 
                                                     <div class="col-md-4">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">رقم الهوية </label>
+                                                            <label for="projectinput1">national id  </label>
                                                             <input type="text" value="{{ $customer->personal_id }}"
                                                                 id="name" class="form-control"
                                                                 placeholder="ادخل رقم الهوية  " name="personal_id">
@@ -81,7 +81,7 @@
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">العيادة  </label>
+                                                            <label for="projectinput1">clinic  </label>
                                                             <input type="text" value="{{ $customer->clinic }}"
                                                                 id="name" class="form-control"
                                                                 placeholder="ادخل اسم العيادة   " name="clinic">
@@ -95,7 +95,7 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">رقم الهاتف </label>
+                                                            <label for="projectinput1">mobile  </label>
                                                             <input type="texe" value="{{ $customer->phone }}"
                                                                 id="name" class="form-control"
                                                                 placeholder="ادخل رقم الهاتف" name="phone">
@@ -107,7 +107,7 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">تاريخ بداية التعامل </label>
+                                                            <label for="projectinput1"> start date  </label>
                                                             <input type="date" value="{{ $customer->start_date }}"
                                                                 id="name" class="form-control" name="start_date">
                                                             @error('start_date')
@@ -121,7 +121,7 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="projectinput1">العنوان </label>
+                                                        <label for="projectinput1">address </label>
                                                         <input type="text" value="{{ $customer->address }}"
                                                             id="name" class="form-control"
                                                             placeholder="ادخل عنوان المريض  " name="address">
@@ -133,7 +133,7 @@
 
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="exampleFormControlSelect1">الجنس</label>
+                                                        <label for="exampleFormControlSelect1">gender</label>
                                                         <select class="form-control" name="gender">
                                                           @foreach ($genderArray as $item)
                                                           <option value="{{$item}}" {{($item) ? 'selected' : ''}}>{{$item}}</option>
@@ -151,7 +151,7 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="projectinput1">ملاحظات </label>
+                                                        <label for="projectinput1">notes </label>
                                                         <textarea type="text" value="{{ $customer->note }}"
                                                             id="name" class="form-control" name="note"></textarea>
                                                         @error('note')
@@ -174,10 +174,10 @@
                                 <div class="form-actions">
 
                                     <button type="submit" class="btn btn-primary">
-                                        <i class="la la-check-square-o"></i> تعديل
+                                        <i class="la la-check-square-o"></i> edit
                                     </button>
                                     <a href="{{ route('admin.customer') }}"> <button type="button" class="btn btn-warning ">
-                                            المرضى
+                                            patients
                                         </button></a>
                                 </div>
                                 </form>

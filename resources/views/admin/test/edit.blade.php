@@ -26,7 +26,7 @@
                         <div class="col-md-12  ">
                             <div class="card ">
                                 <div class="card-header text-right">
-                                    <h4 class="card-title text-center" id="basic-layout-form"> تعديل المواعيد</h4>
+                                    <h4 class="card-title text-center" id="basic-layout-form">  edit test </h4>
                                     <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
                                         <ul class="list-inline mb-0">
@@ -47,12 +47,12 @@
 
 
                                             <div class="form-body">
-                                                <h4 class="form-section"><i class="ft-home"></i> بيانات الموعد </h4>
+                                                <h4 class="form-section"><i class="ft-home"></i> test details  </h4>
 
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">رقم الهوية </label>
+                                                            <label for="projectinput1">national id  </label>
                                                             <input type="text" value="{{$test->customer->personal_id}}" id="personal_id"
                                                                 class="form-control"
                                                                 name="personal_id">
@@ -64,7 +64,7 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">الوصف </label>
+                                                            <label for="projectinput1">description </label>
                                                             <textarea type="text" value="{{$test->description}}" id="desc"
                                                                 class="form-control"
                                                                 name="description"></textarea>
@@ -79,7 +79,7 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="projectinput1">معلومات طبية </label>
+                                                        <label for="projectinput1"> medical information </label>
                                                         <textarea type="text" value="{{$test->info_mid}}" id="info_mid"
                                                             class="form-control"
                                                             name="info_mid"></textarea>

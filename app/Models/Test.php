@@ -20,10 +20,7 @@ class Test extends Model
     ];
 
 
-    public function p_test()
-    {
-        return $this->hasMany(PersonalTest::class);
-    }
+
 
 
     public function customer()

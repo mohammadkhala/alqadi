@@ -12,7 +12,7 @@
 @endsection
 @php
 
-    $genderArray = ['ذكر', 'انثى'];
+    $genderArray = ['انثى', 'ذكر'];
 
 @endphp
 @section('content')
@@ -30,7 +30,7 @@
                         <div class="col-md-12  ">
                             <div class="card ">
                                 <div class="card-header text-center">
-                                    <h4 class="card-title text-center" id="basic-layout-form"> إضافة مريض </h4>
+                                    <h4 class="card-title text-center" id="basic-layout-form"> add patient </h4>
                                     <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
                                         <ul class="list-inline mb-0">
@@ -49,11 +49,11 @@
                                             @method('POST')
 
                                             <div class="form-body">
-                                                <h4 class="form-section"><i class="ft-home"></i> بيانات المريض </h4>
+                                                <h4 class="form-section"><i class="ft-home"></i> patient details </h4>
                                                 <div class="row">
                                                     <div class="col-md-4">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">الاسم </label>
+                                                            <label for="projectinput1">name </label>
                                                             <input type="text" value="" id="txt_1"
                                                                 onchange='saveValue(this);' class="form-control"
                                                                 placeholder="ادخل اسم المريض  " name="name">
@@ -65,10 +65,10 @@
 
                                                     <div class="col-md-4">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">رقم الهوية</label>
+                                                            <label for="projectinput1">national id </label>
                                                             <input type="text" id="" class="form-control"
                                                                 placeholder="ادخل رقم الهوية  " name="personal_id"
-                                                                value="{{$personal_id}}">
+                                                                value="{{ $personal_id }}">
                                                             @error('personal_id')
                                                                 <span class="text-danger">{{ $message }} </span>
                                                             @enderror
@@ -76,7 +76,7 @@
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">العيادة </label>
+                                                            <label for="projectinput1">clinic </label>
                                                             <input type="text" value="" id="txt_3"
                                                                 onchange='saveValue(this);' class="form-control"
                                                                 placeholder="  ادخل اسم العيادة  " name="clinic">
@@ -89,7 +89,7 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">رقم الهاتف </label>
+                                                            <label for="projectinput1">mobile </label>
                                                             <input type="texe" value="" id="txt_4"
                                                                 onchange='saveValue(this);' class="form-control"
                                                                 placeholder="ادخل رقم الهاتف" name="phone">
@@ -100,7 +100,7 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">تاريخ بداية التعامل </label>
+                                                            <label for="projectinput1">start date </label>
                                                             <input type="date" value="" id="txt_5"
                                                                 onchange='saveValue(this);' class="form-control"
                                                                 name="start_date">
@@ -113,7 +113,7 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">العنوان </label>
+                                                            <label for="projectinput1">address </label>
                                                             <input type="text" value="" id="txt_6"
                                                                 onchange='saveValue(this);' class="form-control"
                                                                 placeholder="ادخل عنوان المريض  " name="address">
@@ -124,7 +124,7 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="exampleFormControlSelect1">الجنس</label>
+                                                            <label for="exampleFormControlSelect1">gender</label>
                                                             <select class="form-control" name="gender">
                                                                 @foreach ($genderArray as $item)
                                                                     <option value="{{ $item }}"
@@ -149,7 +149,7 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">ملاحظات </label>
+                                                            <label for="projectinput1">notes </label>
                                                             <textarea type="text" value="" id="txt_7" class="form-control" name="note"
                                                                 onchange='saveValue(this);'></textarea>
                                                             @error('note')
@@ -255,5 +255,4 @@
             return localStorage.getItem(v);
         }
     </script>
-
 @endsection

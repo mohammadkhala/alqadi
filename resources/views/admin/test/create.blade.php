@@ -26,7 +26,7 @@
                         <div class="col-md-12  ">
                             <div class="card ">
                                 <div class="card-header text-center">
-                                    <h4 class="card-title text-center" id="basic-layout-form"> إضافة فحص </h4>
+                                    <h4 class="card-title text-center" id="basic-layout-form">  add test </h4>
                                     <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
                                         <ul class="list-inline mb-0">
@@ -46,12 +46,12 @@
                                             @csrf
 
                                             <div class="form-body">
-                                                <h4 class="form-section"><i class="ft-home"></i> بيانات الفحص </h4>
+                                                <h4 class="form-section"><i class="ft-home"></i> test details   </h4>
 
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">رقم الهوية </label>
+                                                            <label for="projectinput1">national id  </label>
                                                             <input type="text" value=""
                                                                 class="form-control"
                                                                 name="customer_id">
@@ -63,7 +63,7 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">الوصف </label>
+                                                            <label for="projectinput1">description </label>
                                                             <textarea type="text" value="" id="description"
                                                                 class="form-control"
                                                                 name="description"></textarea>
@@ -78,7 +78,7 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="projectinput1">معلومات طبية </label>
+                                                        <label for="projectinput1"> midical informations </label>
                                                         <textarea type="text" value="" id="info_mid"
                                                             class="form-control"
                                                             name="info_mid"></textarea>
@@ -102,11 +102,10 @@
                                 <div class="form-actions">
 
                                     <button type="submit" class="btn btn-primary">
-                                        <i class="la la-check-square-o"></i> حفظ
+                                        <i class="la la-check-square-o"></i> save
                                     </button>
                                     <a href="{{route('admin.test')}}"> <button type="button" class="btn btn-warning " >
-                                        المواعيد
-                                        </button></a>
+tests                                        </button></a>
                                 </div>
                                 </form>
                             </div>

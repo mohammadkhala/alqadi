@@ -44,11 +44,11 @@
                                             @method('PUT')
 
                                             <div class="form-body">
-                                                <h4 class="form-section"><i class="ft-home"></i> بيانات الفحص </h4>
+                                                <h4 class="form-section"><i class="ft-home"></i>  test details </h4>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">رقم الهوية  </label>
+                                                            <label for="projectinput1">national id   </label>
                                                             <input type="text" value="{{$ptest->customer->personal_id}}" id="personal_id"
                                                                 class="form-control"
                                                                 name="personal_id">
@@ -60,7 +60,7 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">رقم الفحص</label>
+                                                            <label for="projectinput1">test id </label>
                                                             <input type="text" value="{{$ptest->test_id}}" id="test_id"
                                                                 class="form-control"
                                                                 name="test_id">
@@ -71,20 +71,10 @@
                                                     </div>
                                                 </div>
                                                 <div class="row">
+
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">المسافة </label>
-                                                            <input type="text" value="{{$ptest->distance}}" id="distance"
-                                                                class="form-control"
-                                                                name="distance">
-                                                            @error('distance')
-                                                                <span class="text-danger">{{ $message }}</span>
-                                                            @enderror
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="projectinput1">درجة العين اليمنى</label>
+                                                            <label for="projectinput1">  </label>
                                                             <input type="text" value="{{$ptest->right_eye_degree}}" id="right_eye_degree"
                                                                 class="form-control"
                                                                 name="right_eye_degree">

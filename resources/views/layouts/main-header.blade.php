@@ -6,7 +6,7 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{ route('home') }}" class="nav-link">الرئيسية</a>
+            <a href="{{ route('home') }}" class="nav-link">Home</a>
         </li>
         <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/alqadilogo.jpg') }}">
 
@@ -25,12 +25,12 @@
             <li class="nav-item">
 
                 <a href="{{ route('admin.transaction.create') }}" >
-                    <button type="button" class="btn btn-info">اضافة دفعات مالية
+                    <button type="button" class="btn btn-info">  add payments
                     </button>
             </li>
             <li class="nav-item">
                 <a href="{{ route('admin.finance.create') }}" >
-                    <button type="button" class="btn btn-info">اضافة معلومات مالية
+                    <button type="button" class="btn btn-info">add finance informations
                     </button>
                 </a>
             </li>
@@ -38,24 +38,24 @@
 
             <li class="nav-item">
                 <a href="{{ route('admin.ptest.create') }}" >
-                    <button type="button" class="btn btn-info"> اضافة فحص مريض
+                    <button type="button" class="btn btn-info"> add personal tests
+
                     </button>
                 </a>
             </li>
   <li class="nav-item">
             <a href="{{ route('admin.test.create') }}" >
-                <button type="button" class="btn btn-info"> اضافة فحص اساسي
-                </button>
+                <button type="button" class="btn btn-info">   add test </button>
             </a>
  </li>
   <li class="nav-item">
             <a href="{{ route('admin.appointment.create') }}">
-                <button type="button" class="btn btn-info"> اضافة موعد
+                <button type="button" class="btn btn-info"> add appointment
                 </button>
             </a>
         </li>
             <a href="{{ route('admin.customer.checkId') }}">
-                <button type="button" class="btn btn-info"> اضافة مريض
+                <button type="button" class="btn btn-info"> add patient
                     </button>
             </a>
         </li>
@@ -83,7 +83,7 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{ route('home') }}" class="nav-link">الرئيسية</a>
+            <a href="{{ route('home') }}" class="nav-link">Home</a>
         </li>
 
 
@@ -98,24 +98,24 @@
 <div class="container"  style="display:flex; margin: 2px" >
 <li class="nav-item">
     <a href="{{ route('admin.ptest.create') }}" >
-        <button type="button" class="btn btn-info"> اضافة فحص مريض
+        <button type="button" class="btn btn-info">   add personal  test
         </button>
     </a>
 </li>
 <li class="nav-item">
 <a href="{{ route('admin.test.create') }}" >
-    <button type="button" class="btn btn-info"> اضافة فحص اساسي
+    <button type="button" class="btn btn-info">  add  test
     </button>
 </a>
 </li>
 <li class="nav-item">
 <a href="{{ route('admin.appointment.create') }}">
-    <button type="button" class="btn btn-info"> اضافة موعد
+    <button type="button" class="btn btn-info"> add appointment
     </button>
 </a>
 </li>
 <a href="{{ route('admin.customer.create') }}">
-    <button type="button" class="btn btn-info"> اضافة مريض
+    <button type="button" class="btn btn-info"> add patient
         </button>
 </a>
 </li>

@@ -29,42 +29,41 @@
                 <tr>
                     <th>#</th>
                     <th>national id </th>
-                    <th> test id </th>
-                    <th>distance</th>
+
+
                     <th> right_eye_without_corr </th>
                     <th>left_eye_without_corr</th>
                     <th> right_eye_with_corr </th>
                     <th>left_eye_with_corr</th>
+                    <th>added by</th>
+                    <th>corrected by</th>
                     <th>date</th>
-                    <th>report </th>
                     <th>cost </th>
-                     <th>attach </th>
                     <th>actions</th>
 
                 </tr>
             </thead>
             <tbody>
                 @foreach ($ptests as $key => $ptest)
-                <tr>
-                    <td>{{ $key = $key + 1 }}</td>
-                    <td>{{ $ptest->customer->personal_id }}</td>
-                    <td> {{ $ptest->test_id }}</td>
-                    <td> {{ $ptest->distance }}</td>
-                    <td>{{ $ptest->right_eye_without_corr  }} </td>
-                    <td>{{ $ptest->left_eye_without_corr  }}</td>
-                    <td>{{ $ptest->right_eye_with_corr  }} </td>
-                    <td>{{ $ptest->left_eye_with_corr  }}</td>
-                    <td>{{ $ptest->date }}</td>
-                    <td>{{ $ptest->report }}</td>
-                     <td>{{ $ptest->cost }}</td>
-                      <td>{{ $ptest->attach }}</td>
-                    <td>
-                        <a href="{{ route('admin.ptest.edit', ['id' => $ptest->id]) }}" class="btn btn-primary btn-sm"
-                            id="edit"><i class="fa fa-edit"></i></a>
-                     <a href="{{ route('admin.ptest.delete', ['id' => $ptest->id]) }}" class="btn btn-danger btn-sm"
-                        id="delete"><i class="fa fa-trash"></i></a>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>{{ $key = $key + 1 }}</td>
+                        <td>{{ $ptest->customer->personal_id }}</td>
+                        <td>{{ $ptest->right_eye_without_corr }} </td>
+                        <td>{{ $ptest->left_eye_without_corr }}</td>
+                        <td>{{ $ptest->right_eye_with_corr }} </td>
+                        <td>{{ $ptest->left_eye_with_corr }}</td>
+                        <td>{{ Auth::user()->name }}</td>
+                        <td>{{ $ptest->correctedBy }}</td>
+                        <td>{{ $ptest->date }}</td>
+                        <td>{{ $ptest->cost }}</td>
+
+                        <td>
+                            <a href="{{ route('admin.ptest.edit', ['id' => $ptest->id]) }}" class="btn btn-primary btn-sm"
+                                id="edit"><i class="fa fa-edit"></i></a>
+                            <a href="{{ route('admin.ptest.delete', ['id' => $ptest->id]) }}" class="btn btn-danger btn-sm"
+                                id="delete"><i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
                 @endforeach
             </tbody>
         </table>

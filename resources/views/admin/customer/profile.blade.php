@@ -88,8 +88,7 @@
                                             <tr>
 
 
-                                                <th> test id </th>
-                                                <th>distance</th>
+
                                                 <th> right_eye_without_corr </th>
                                                 <th>left_eye_without_corr</th>
                                                 <th> right_eye_with_corr </th>
@@ -104,8 +103,8 @@
 
                                             @foreach ($customers->personalTests as $customer)
                                                 <tr>
-                                                    <td>{{ $customer->test_id }}</td>
-                                                    <td>{{ $customer->distance }}</td>
+
+
                                                     <td>{{ $customer->right_eye_without_corr }}</td>
                                                     <td>{{ $customer->left_eye_without_corr }}</td>
                                                     <td>{{ $customer->right_eye_with_corr }}</td>
@@ -129,13 +128,12 @@
                                         <thead>
                                             <tr>
 
+                                                <th>note</th>
 
-                                                <th>  date </th>
-                                                <th>distance</th>
+                                                <th> date </th>
                                                 <th> hour </th>
                                                 <th>clinic</th>
-                                                <th> physician </th>
-                                                <th>note</th>
+                                                <th> optimistic </th>
 
 
 
@@ -146,12 +144,13 @@
 
                                             @foreach ($customers->appointments as $customer)
                                                 <tr>
+                                                    <td>{{ $customer->note }}</td>
                                                     <td>{{ $customer->date }}</td>
                                                     <td>{{ $customer->hour }}</td>
                                                     <td>{{ $customer->clinic }}</td>
-                                                    <td>{{ $customer->physician }}</td>
+                                                    <td>{{ $customer->optimimstic }}</td>
 
-                                                    <td>{{ $customer->note }}</td>
+
 
                                                 </tr>
                                             @endforeach
@@ -170,15 +169,15 @@
                                         <thead>
                                             <tr>
 
-
-                                                <th>  finance id </th>
-                                                <th>test id</th>
-                                                <th> date </th>
-                                                <th>total ammount</th>
-                                                <th> remaining </th>
                                                 <th>note</th>
 
 
+                                                <th> date </th>
+
+                                                <th> remaining </th>
+
+                                                <th>total ammount</th>
+                                                <th> finance id </th>
 
 
                                             </tr>
@@ -187,12 +186,12 @@
 
                                             @foreach ($customers->finance as $customer)
                                                 <tr>
-                                                    <td>{{ $customer->id }}</td>
-                                                    <td>{{ $customer->test_id }}</td>
-                                                    <td>{{ $customer->date }}</td>
-                                                    <td>{{ $customer->amount }}</td>
-                                                    <td>{{ $customer->remaining }}</td>
                                                     <td>{{ $customer->note }}</td>
+
+                                                    <td>{{ $customer->date }}</td>
+
+                                                    <td>{{ $customer->remaining }}</td>
+                                                    <td>{{ $customer->amount }}</td>
 
                                                 </tr>
                                             @endforeach
@@ -203,17 +202,17 @@
 
                                     </table>
 
-                                <!-- /.tab-pane -->
-                            </div>
-                            <!-- /.tab-content -->
-                        </div><!-- /.card-body -->
+                                    <!-- /.tab-pane -->
+                                </div>
+                                <!-- /.tab-content -->
+                            </div><!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
                     </div>
-                    <!-- /.card -->
+                    <!-- /.col -->
                 </div>
-                <!-- /.col -->
-            </div>
-            <!-- /.row -->
-        </div><!-- /.container-fluid -->
+                <!-- /.row -->
+            </div><!-- /.container-fluid -->
     </section>
 @endsection
 
@@ -223,4 +222,5 @@
 
 
 @section('scripts')
+
 @endsection

@@ -8,6 +8,7 @@ use App\Models\Test;
 use App\Models\Finance;
 use Illuminate\Http\Request;
 use App\Models\Customer;
+use App\Models\PersonalTest;
 use Carbon\Carbon;
 
 class FinanceController extends Controller
@@ -39,7 +40,7 @@ class FinanceController extends Controller
         $this->validate($request, [
 
             'customer_id' => 'required|exists:customers,personal_id',
-            'test_id' => 'required|exists:tests,id',
+            'test_id' => 'required|exists:p_tests,id',
             'amount' => 'required|integer',
             'date' => 'required'
         ]);
@@ -69,11 +70,11 @@ class FinanceController extends Controller
     {
         $this->validate($request, [
             'customer_id' => 'required|exists:customers,personal_id',
-            'test_id' => 'required|exists:tests,id',
+            'test_id' => 'required|exists:p_tests,id',
             'amount' => 'required|integer',
             'date' => 'required'
         ]);
-        $test = Test::findOrFail($request->id);
+        $test = PersonalTest::findOrFail($request->id);
 
         $finances ->update([
                     'customer_id' => $finances->customer->id,

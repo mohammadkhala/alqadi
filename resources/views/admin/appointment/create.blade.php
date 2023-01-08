@@ -45,12 +45,12 @@
                                             @csrf
 
                                             <div class="form-body">
-                                                <h4 class="form-section"><i class="ft-home"></i> بيانات الموعد </h4>
+                                                <h4 class="form-section"><i class="ft-home"></i> appointment details  </h4>
 
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">رقم الهوية </label>
+                                                            <label for="projectinput1">national id  </label>
                                                             <input type="text" value="" id="txt_9" onchange='saveValue(this);'
                                                                 class="form-control" name="customer_id">
                                                             @error('customer_id')
@@ -60,7 +60,7 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">الاسم </label>
+                                                            <label for="projectinput1">name </label>
                                                             <input type="text" value="" id="txt_10" onchange='saveValue(this);'
                                                                 class="form-control" name="name">
                                                             @error('name')
@@ -74,7 +74,7 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">التاريخ </label>
+                                                            <label for="projectinput1">date </label>
                                                             <input type="date" value="" id="txt_11" onchange='saveValue(this);'
                                                                 class="form-control" name="date">
                                                             @error('date')
@@ -84,7 +84,7 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">الساعة </label>
+                                                            <label for="projectinput1">hour </label>
                                                             <input type="time" value="" id="txt_12" onchange='saveValue(this);'
                                                                 class="form-control" name="hour">
                                                             @error('hour')
@@ -101,7 +101,7 @@
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">العيادة </label>
+                                                            <label for="projectinput1">clinic </label>
                                                             <input type="text" value="" id="txt_13" onchange='saveValue(this);'
                                                                 class="form-control" name="clinic">
                                                             @error('clinic')
@@ -111,17 +111,17 @@
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">المعالج </label>
+                                                            <label for="projectinput1">optimistic </label>
                                                             <input type="text" value="" id="txt_14"   onchange='saveValue(this);'
-                                                            class="form-control" name="physician">
-                                                            @error('physician')
+                                                            class="form-control" name="optimimstic">
+                                                            @error('optimimstic')
                                                                 <span class="text-danger">{{ $message }}</span>
                                                             @enderror
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">ملاحظات </label>
+                                                            <label for="projectinput1">notes </label>
                                                             <textarea type="text" value="" id="txt_15" onchange='saveValue(this);' class="form-control" name="note"></textarea>
                                                             @error('note')
                                                                 <span class="text-danger">{{ $message }}</span>

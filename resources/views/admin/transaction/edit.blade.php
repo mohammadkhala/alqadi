@@ -25,7 +25,7 @@
                         <div class="col-md-12  ">
                             <div class="card ">
                                 <div class="card-header text-center">
-                                    <h4 class="card-title text-center" id="basic-layout-form"> تعديل دفعات مالية  </h4>
+                                    <h4 class="card-title text-center" id="basic-layout-form"> edit transaction    </h4>
                                     <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
                                         <ul class="list-inline mb-0">
@@ -43,11 +43,11 @@
                                             @csrf
                                             @method('PUT')
                                             <div class="form-body">
-                                                <h4 class="form-section"><i class="ft-home"></i> بيانات الدفعة </h4>
+                                                <h4 class="form-section"><i class="ft-home"></i> payment details  </h4>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">رقم المالية  </label>
+                                                            <label for="projectinput1">finance id   </label>
                                                             <input type="text" value="{{$transaction->finance_id}}" id="finance_id"
                                                                 class="form-control"
                                                                 name="finance_id">
@@ -59,7 +59,7 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">الدفعة </label>
+                                                            <label for="projectinput1">payment </label>
                                                             <input type="text" value="{{$transaction->payment}}" id="payment"
                                                                 class="form-control"
                                                                 name="payment">
@@ -72,7 +72,7 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">التاريخ </label>
+                                                            <label for="projectinput1">date </label>
                                                             <input type="date" value="{{$transaction->date}}" id="date"
                                                                 class="form-control"
                                                                 name="date">
@@ -84,7 +84,7 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">ملاحظات </label>
+                                                            <label for="projectinput1">notes </label>
                                                             <textarea type="text" value="{{$transaction->note}}" id="note"
                                                                 class="form-control"
                                                                 name="note"></textarea>
@@ -101,10 +101,10 @@
                                     <div class="form-actions">
 
                                         <button type="submit" class="btn btn-primary">
-                                            <i class="la la-check-square-o"></i> حفظ
+                                            <i class="la la-check-square-o"></i> save
                                         </button>
                                         <a href="{{route('admin.transaction')}}"> <button type="button" class="btn btn-warning " >
-الدفعات                                            </button></a>
+transactions                                            </button></a>
                                     </div>
                                 </form>
                             </div>

@@ -26,7 +26,7 @@
         <table id="example1" class="table table-bordered table-striped" dir="rtl">
             <thead>
                 <tr>
-                    <th>#</th>
+                    <th>profile</th>
                     <th>name</th>
                     <th>national id </th>
                     <th>clinic </th>
@@ -43,7 +43,8 @@
 
                 @foreach ($customers as $customer)
                 <tr>
-                    <td>{{ $loop->iteration }}</td>
+                    <td> <a href="{{ route('admin.customer.profile', ['id' => $customer->id]) }}" class="btn btn-success btn-sm"
+                        id="delete"><i class="fa fa-eye"></i></a></td>
                     <td>{{ $customer->name }}</td>
                     <td>{{ $customer->personal_id }}</td>
                     <td>{{ $customer->clinic }}</td>
@@ -57,8 +58,7 @@
                             id="edit"><i class="fa fa-edit"></i></a>
                      <a href="{{ route('admin.customer.delete', ['id' => $customer->id]) }}" class="btn btn-danger btn-sm"
                         id="delete"><i class="fa fa-trash"></i></a>
-                        <a href="{{ route('admin.customer.profile', ['id' => $customer->id]) }}" class="btn btn-danger btn-sm"
-                            id="delete"><i class="fa fa-eye"></i></a>
+
                     </td>
                 </tr>
                 @endforeach

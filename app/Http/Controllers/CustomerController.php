@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CustomerRequest;
 use App\Models\Customer;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -66,7 +67,7 @@ class CustomerController extends Controller
             $customer = Customer::create([
                 'personal_id' => $request->personal_id,
                 'name' => $request->name,
-                'start_date' => $request->start_date,
+                'start_date' => Carbon::now(),
                 'phone' => $request->phone,
                 'address' => $request->address,
                 'note' => $request->note,
@@ -75,7 +76,7 @@ class CustomerController extends Controller
             ]);
             return redirect()->back()->with('success', 'تم اضافة مريض جديد');
         } catch (\Throwable $th) {
-           // return $th;
+            //return $th;
             return redirect()->back()->with('error', 'حدث خطأ يرجى اعادة المحاول');
         }
     }

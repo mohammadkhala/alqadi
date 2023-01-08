@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+use App\Models\PersonalTest;
 use App\Models\Test;
 use Illuminate\Http\Request;
 use Symfony\Component\Console\Helper\Table;
@@ -27,7 +28,7 @@ class HomeController extends Controller
     public function index()
     {
         $customers = Customer::latest()->get();
-        $tests=Test::latest()->get();
+        $tests=PersonalTest::latest()->get();
         return view('dashboard', compact('customers','tests'));
     }
 }

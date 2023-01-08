@@ -17,8 +17,8 @@
 @section('title_page1')
 <div class="column">
     <a href="{{route('registertraion')}}"> <button type="button" class="btn btn-warning " >
-        اضافة موظفين
-        </button></a> -  الموظفين
+        add employees
+        </button></a> -  employees
 @endsection
 @section('title_page2')
     لوحة التحكم
@@ -33,9 +33,9 @@
                 <tr>
 
 
-                    <th>الاسم</th>
-                    <th>البريد الالكتروني </th>
-                    <th>الدور</th>
+                    <th>name</th>
+                    <th>email  </th>
+                    <th>role</th>
 
                 </tr>
             </thead>
@@ -47,9 +47,8 @@
                     <td>{{ $employee->name }} </td>
                     <td>{{ $employee->email }} </td>
                     <td>@if( $employee->is_admin==1 )
-                        مسؤول
-                   @else
-                   موظف  @endif</td>
+admin                   @else
+                   employee  @endif</td>
 
                 </tr>
                 @endforeach

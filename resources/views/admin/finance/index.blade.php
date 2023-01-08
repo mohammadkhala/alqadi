@@ -87,7 +87,7 @@
                 </tr>
             </thead>
             <a href="{{ route('admin.transaction.create') }}" >
-                <button type="button" class="btn btn-info">اضافة دفعات مالية
+                <button type="button" class="btn btn-info">  add payments
                 </button>
             </a>
             <tbody>

@@ -17,7 +17,7 @@ class Appointment extends Model
         'hour',
         'clinic',
         'name',
-        'physician',
+        'optimimstic',
         'created_at',
         'updated_at'
     ];

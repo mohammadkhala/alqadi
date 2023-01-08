@@ -37,11 +37,11 @@
                                             @csrf
                                             @method('PUT')
                                             <div class="form-body">
-                                                <h4 class="form-section"><i class="ft-home"></i> بيانات المالية </h4>
+                                                <h4 class="form-section"><i class="ft-home"></i>  finance details </h4>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">رقم الهوية  </label>
+                                                            <label for="projectinput1"> national id  </label>
                                                             <input type="text" value="{{$finance->personal_id}}" id="personal_id"
                                                                 class="form-control"
                                                                 name="personal_id">
@@ -53,7 +53,7 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">رقم الفحص</label>
+                                                            <label for="projectinput1">test id </label>
                                                             <input type="text" value="{{$finance->test_id}}" id="test_id"
                                                                 class="form-control"
                                                                 name="test_id">
@@ -66,7 +66,7 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">المبلغ </label>
+                                                            <label for="projectinput1">amount </label>
                                                             <input type="text" value="{{$finance->amount}}" id="amount"
                                                                 class="form-control"
                                                                 name="amount">
@@ -78,7 +78,7 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">التاريخ </label>
+                                                            <label for="projectinput1">date </label>
                                                             <input type="date" value="{{$finance->date}}" id="date"
                                                                 class="form-control"
                                                                 name="date">
@@ -92,7 +92,7 @@
 
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="projectinput1">ملاحظات </label>
+                                                        <label for="projectinput1">notes </label>
                                                         <textarea type="text" value="{{$finance->note}}" id="note"
                                                             class="form-control"
                                                             name="note"></textarea>
@@ -108,10 +108,10 @@
                                     <div class="form-actions">
 
                                         <button type="submit" class="btn btn-primary">
-                                            <i class="la la-check-square-o"></i> تعديل
+                                            <i class="la la-check-square-o"></i> save
                                         </button>
                                         <a href="{{route('admin.finance')}}"> <button type="button" class="btn btn-warning " >
-                                            المالية
+                                            finance
                                             </button></a>
                                     </div>
                                 </form>
