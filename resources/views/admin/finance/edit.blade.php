@@ -42,10 +42,10 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="projectinput1"> national id  </label>
-                                                            <input type="text" value="{{$finance->personal_id}}" id="personal_id"
+                                                            <input type="text" value="{{$finance->customer->personal_id}}" id="customer_id"
                                                                 class="form-control"
-                                                                name="personal_id">
-                                                            @error('personal_id')
+                                                                name="customer_id">
+                                                            @error('customer_id')
                                                                 <span class="text-danger">{{ $message }}</span>
                                                             @enderror
                                                         </div>

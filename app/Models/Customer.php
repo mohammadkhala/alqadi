@@ -42,4 +42,5 @@ class Customer extends Model
         return $this->hasMany(Finance::class);
     }
 
+
 }

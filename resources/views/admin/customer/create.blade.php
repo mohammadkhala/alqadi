@@ -54,7 +54,7 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label for="projectinput1">name </label>
-                                                            <input type="text" value="" id="txt_1"
+                                                            <input type="text" value="" id=""
                                                                 onchange='saveValue(this);' class="form-control"
                                                                 placeholder="ادخل اسم المريض  " name="name">
                                                             @error('name')

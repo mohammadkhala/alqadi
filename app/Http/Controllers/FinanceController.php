@@ -6,6 +6,7 @@ use App\Models\Transaction;
 use App\Models\Test;
 
 use App\Models\Finance;
+use Exception;
 use Illuminate\Http\Request;
 use App\Models\Customer;
 use App\Models\PersonalTest;
@@ -51,48 +52,52 @@ class FinanceController extends Controller
             'date' => Carbon::now(),
             'amount' => $request->amount,
             'remaining' =>  $request->amount,
-            'note' => $request->note ,
+            'note' => $request->note,
 
         ]);
-        return redirect()->route('admin.finance')->with('success', 'تم اضافة معلومات مالية جديدة');
-
+        return redirect()->back()->with('success', 'تم اضافة معلومات مالية جديدة');
     }
 
 
-    public function edit(Finance $finance,$id)
+    public function edit(Finance $finance, $id)
     {
         $finance = Finance::find($id);
-        return view('admin.finance.edit',compact('finance'));
+
+        return view('admin.finance.edit', compact('finance'));
     }
 
 
-    public function update(Request $request,Finance $finances,$id)
+    public function update(Request $request, Finance $finances, $id)
     {
-        $this->validate($request, [
-            'customer_id' => 'required|exists:customers,personal_id',
-            'test_id' => 'required|exists:p_tests,id',
-            'amount' => 'required|integer',
-            'date' => 'required'
-        ]);
-        $test = PersonalTest::findOrFail($request->id);
+        try {
 
-        $finances ->update([
-                    'customer_id' => $finances->customer->id,
-                    'test_id' => $test->id,
-                    'date' => $request->date,
-                   'amount'=>$request->amount,
-
-                   'note'=>$request->note
-                ]);
-        return redirect()->route('admin.finance')->with('success', 'تم تحديث معلومات مالية جديدة');
-
-
+            $this->validate($request, [
+                'customer_id' => 'required|exists:customers,personal_id',
+                'test_id' => 'required|exists:p_tests,id',
+                'amount' => 'required|integer',
+                'date' => 'required'
+            ]);
+            $test = PersonalTest::findOrFail($request->id);
+            $finance = Customer::findOrFail($request->id);
+            $finances->update([
+                'customer_id' => $finance->customer->personal_id,
+                'test_id' => $test->id,
+                'date' => $request->date,
+                'amount' => $request->amount,
+                'note' => $request->note
+            ]);
+            return redirect()->back()->with('success', 'تم تحديث معلومات مالية جديدة');
+        } catch (Exception $ex) {
+         //   dd($request);
+            return $ex;
+            return redirect()->back()->with('message', 'حدث خطأ ما');
+        }
     }
 
     public function destroy($id)
     {
         $finance = Finance::findOrFail($id);
         $finance->delete();
-        return redirect()->route('admin.finance')->with('message', 'تم الحذف بنجاح');
+        return redirect()->back()->with('message', 'تم الحذف بنجاح');
     }
 }

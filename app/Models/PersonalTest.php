@@ -25,7 +25,7 @@ class PersonalTest extends Model
         'correctedBy',
         'cost',
 
-        'test_id',
+
         'created_at',
         'updated_at',
     ];

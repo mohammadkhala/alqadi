@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('clinic');
             $table->string('optimimstic');
             $table->text('note')->nullable();
-            $table->time('hour')->unique();
+            $table->time('hour');
             $table->timestamps();
         });
     }

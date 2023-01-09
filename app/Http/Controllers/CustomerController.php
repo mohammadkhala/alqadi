@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CustomerRequest;
 use App\Models\Customer;
+use App\Models\PersonalTest;
+use App\Models\Transaction;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
@@ -76,7 +78,7 @@ class CustomerController extends Controller
             ]);
             return redirect()->back()->with('success', 'تم اضافة مريض جديد');
         } catch (\Throwable $th) {
-            //return $th;
+            return $th;
             return redirect()->back()->with('error', 'حدث خطأ يرجى اعادة المحاول');
         }
     }
@@ -90,11 +92,13 @@ class CustomerController extends Controller
     public function show(Customer $customers, $id)
     {
         try {
-
-            $customers = Customer::find($id);
-            $customers->load('appointments', 'finance', 'personalTests', 'test')->findOrFail($id);
+            $trans = Transaction::find($id);
+            $ptest = PersonalTest::find($id);
+            $customers = Customer::paginate(2);
+            $customerse = Customer::find($id);
+            $customerse->load('appointments', 'finance', 'personalTests', 'test')->findOrFail($id);
             //dd($customer);
-            return view('admin.customer.profile', compact('customers'));
+            return view('admin.customer.profile', compact('customerse','customers','ptest','trans'));
         } catch (Exception $ex) {
             return $ex;
         }

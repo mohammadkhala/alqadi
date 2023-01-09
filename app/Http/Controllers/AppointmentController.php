@@ -118,15 +118,15 @@ class AppointmentController extends Controller
                 'date' => $request->date,
                 'note' => $request->note,
                 'clinic' => $request->clinic,
-                'optimimstic' => $request->optimistic,
+                'optimimstic' => $request->optimimstic,
                 'name' => $request->name,
                 'hour' => $request->hour,
 
             ]);
-            return redirect()->route('admin.appointment')->with(['success' => 'تم ألتحديث بنجاح']);
+            return redirect()->back()->with(['success' => 'تم ألتحديث بنجاح']);
         } catch (Exception $ex) {
-
-            return redirect()->route('admin.appointment')->with(['error' => 'هذا الموعد غير موجود ']);
+            //return $ex;
+            return redirect()->back()->with(['error' => 'هذا الموعد غير موجود ']);
         }
     }
 
@@ -140,6 +140,6 @@ class AppointmentController extends Controller
     {
         $appointment = Appointment::findOrFail($id);
         $appointment->delete();
-        return redirect()->route('admin.appointment')->with('message', 'تم الحذف بنجاح');
+        return redirect()->back()->with('message', 'تم الحذف بنجاح');
     }
 }

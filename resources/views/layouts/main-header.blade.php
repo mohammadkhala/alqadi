@@ -17,7 +17,6 @@
         <!-- Navbar Search -->
 
 
-
 <div class="container"  style="display:flex; margin: 2px" >
 
         <li class="nav-item" >

@@ -6,7 +6,7 @@
 
 @endsection
 @section('title_page1')
-    {{ $test->p_id }}تعديل
+تعديل
 @endsection
 @section('title_page2')
     لوحة التحكم

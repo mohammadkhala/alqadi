@@ -76,9 +76,9 @@ class PersonalTestController extends Controller
 
             ]);
          //   dd($ptest);
-            return redirect()->route('admin.ptest')->with('success', 'تم اضافة فحص جديد');
+            return redirect()->back()->with('success', 'تم اضافة فحص جديد');
         } catch (Exception $ex) {
-            return $ex;
+           // return $ex;
             return redirect()->route('admin.ptest.create')->with('error', ' test id not exists');
         }
     }
@@ -110,7 +110,7 @@ class PersonalTestController extends Controller
 
                 'cost' => 'required|integer',
 
-                'test_id' => 'required|exists:p_tests,id',
+
             ]);
 
             $ptest = PersonalTest::findOrFail($id);
@@ -121,7 +121,7 @@ class PersonalTestController extends Controller
                 'left_eye_without_corr' => $request->left_eye_without_corr,
                 'right_eye_with_corr' => $request->left_eye_with_corr,
                 'left_eye_with_corr' => $request->left_eye_without_corr,
-                'date' => Carbon::now(),
+                'date' => $request->date,
 
                 'cost' => $request->cost,
 
@@ -134,8 +134,9 @@ class PersonalTestController extends Controller
             //     'attach'=>   $request->attach,
             // ]);
 
-            return redirect()->route('admin.ptest')->with(['success' => 'تم ألتحديث بنجاح']);
+            return redirect()->back()->with(['success' => 'تم ألتحديث بنجاح']);
         } catch (Exception $ex) {
+           // return $ex;
             return redirect()->route('admin.ptest')->with(['error' => 'هذا الموعد غير موجود ']);
         }
     }
@@ -144,6 +145,6 @@ class PersonalTestController extends Controller
     {
         $ptest = PersonalTest::findOrFail($id);
         $ptest->delete();
-        return redirect()->route('admin.ptest')->with('message', 'تم الحذف بنجاح');
+        return redirect()->back()->with('message', 'تم الحذف بنجاح');
     }
 }
