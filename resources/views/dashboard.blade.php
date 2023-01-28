@@ -101,7 +101,7 @@
 
         </div>
 
-        <div class="card card-primary">
+        <div class="card card-primary" id="printbtn">
             <div class="card-header" >
               <h3 class="card-title">Check Id</h3>
             </div>
@@ -109,7 +109,7 @@
             <!-- form start -->
             <form action="{{ route('admin.customer.checkidAction') }}"   method="head">
                 @csrf
-              <div class="card-body">
+              <div class="card-body" >
                 <div class="form-group">
                   <label for="exampleInputEmail1">Enter National id</label>
                   <input type="text" class="form-control" id="exampleInputEmail1" name="personal_id" placeholder="Enter id"
@@ -121,7 +121,7 @@
               </div>
               <!-- /.card-body -->
 
-              <div class="card-footer">
+              <div class="card-footer" id="printbtn">
                 <button type="submit" class="btn btn-primary">Submit</button>
               </div>
             </form>

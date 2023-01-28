@@ -286,7 +286,7 @@
                                         enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-body">
-                                            <h4 class="form-section"><i class="ft-home"></i> بيانات الفحص </h4>
+                                            <h4 class="form-section"><i class="ft-home"></i>  test details </h4>
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group" hidden>
