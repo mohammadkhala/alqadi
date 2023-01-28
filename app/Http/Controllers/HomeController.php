@@ -2,33 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appointment;
+use Illuminate\Http\Request;
+use App\Models\CrudEvents;
 use App\Models\Customer;
 use App\Models\PersonalTest;
-use App\Models\Test;
-use Illuminate\Http\Request;
-use Symfony\Component\Console\Helper\Table;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function index(Request $request)
     {
-        $this->middleware('auth');
+        $appointments = Appointment::all();
+        $appoin = Appointment::get()->last();
+        $test = PersonalTest::get()->last();
+        $customer = Customer::get()->last();
+        return view('dashboard', compact('appointments'))->with('customer', $customer)
+        ->with('appoin', $appoin)
+        ->with('test',$test);
     }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
+    public function store(Request $request)
     {
-        $customers = Customer::latest()->get();
-        $tests=PersonalTest::latest()->get();
-        return view('dashboard', compact('customers','tests'));
+
+        $customer = Customer::create([
+            'personal_id' => $request->personal_id,
+            'name' => $request->name,
+            'gender' => $request->gender,
+            'start_date' => Carbon::now(),
+            'clinic' => $request->clinic
+        ]);
+        return redirect()->back()->with('succsess', 'patient added successfuly');
     }
 }

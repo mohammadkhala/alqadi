@@ -78,9 +78,10 @@ class FinanceController extends Controller
                 'date' => 'required'
             ]);
             $test = PersonalTest::findOrFail($request->id);
-            $finance = Customer::findOrFail($request->id);
+            $finances= Customer::findOrFail($request->id);
             $finances->update([
-                'customer_id' => $finance->customer->personal_id,
+                'customer_id' => $finances->customer->personal_id,
+
                 'test_id' => $test->id,
                 'date' => $request->date,
                 'amount' => $request->amount,
@@ -88,7 +89,7 @@ class FinanceController extends Controller
             ]);
             return redirect()->back()->with('success', 'تم تحديث معلومات مالية جديدة');
         } catch (Exception $ex) {
-         //   dd($request);
+        // dd($request);
             return $ex;
             return redirect()->back()->with('message', 'حدث خطأ ما');
         }

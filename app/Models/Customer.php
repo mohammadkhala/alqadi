@@ -11,7 +11,7 @@ class Customer extends Model
     use HasFactory;
     //protected $primaryKey='personal_id';
     protected $fillable = [
-       'id',
+        'id',
         'personal_id',
         'name',
         'clinic',
@@ -26,7 +26,7 @@ class Customer extends Model
 
     public function appointments()
     {
-        return $this->hasMany(Appointment::class);
+        return $this->hasMany(  Appointment::class);
     }
     public function personalTests()
     {
@@ -41,6 +41,4 @@ class Customer extends Model
     {
         return $this->hasMany(Finance::class);
     }
-
-
 }

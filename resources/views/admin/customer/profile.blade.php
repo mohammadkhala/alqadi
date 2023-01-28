@@ -98,11 +98,13 @@
                                             <tr>
 
 
+                                                <th>test id</th>
 
-                                                <th> right_eye_without_corr </th>
                                                 <th>left_eye_without_corr</th>
-                                                <th> right_eye_with_corr </th>
                                                 <th>left_eye_with_corr</th>
+                                                <th> right_eye_without_corr </th>
+
+                                                <th> right_eye_with_corr </th>
                                                 <th>date</th>
                                                 <th>action</th>
 
@@ -114,18 +116,21 @@
                                             @foreach ($customerse->personalTests as $customer)
                                                 <tr>
 
+                                                    <td> {{$customer->id}}</td>
 
                                                     <td>{{ $customer->right_eye_without_corr }}</td>
-                                                    <td>{{ $customer->left_eye_without_corr }}</td>
+
                                                     <td>{{ $customer->right_eye_with_corr }}</td>
+                                                    <td>{{ $customer->left_eye_without_corr }}</td>
                                                     <td>{{ $customer->left_eye_with_corr }}</td>
                                                     <td>{{ $customer->date }}</td>
                                                     <td> <a href="{{ route('admin.ptest.edit', ['id' => $customer->id]) }}"
                                                             class="btn btn-primary btn-sm" id="edit"><i
                                                                 class="fa fa-edit"></i></a>
-                                                               <a href="{{ route('admin.ptest.delete', ['id' => $customer->id]) }}"
-                                                                class="btn btn-danger btn-sm" id="edit"><i
-                                                                    class="fa fa-trash"></i></a></td>
+                                                        <a href="{{ route('admin.ptest.delete', ['id' => $customer->id]) }}"
+                                                            class="btn btn-danger btn-sm" id="edit"><i
+                                                                class="fa fa-trash"></i></a>
+                                                    </td>
                                                 </tr>
                                             @endforeach
 
@@ -169,9 +174,10 @@
                                                     <td> <a href="{{ route('admin.appointment.edit', ['id' => $customer->id]) }}"
                                                             class="btn btn-primary btn-sm" id="edit"><i
                                                                 class="fa fa-edit"></i></a>
-                                                    <a href="{{ route('admin.appointment.delete', ['id' => $customer->id]) }}"
-                                                        class="btn btn-danger btn-sm" id="edit"><i
-                                                            class="fa fa-trash"></i></a></td>
+                                                        <a href="{{ route('admin.appointment.delete', ['id' => $customer->id]) }}"
+                                                            class="btn btn-danger btn-sm" id="edit"><i
+                                                                class="fa fa-trash"></i></a>
+                                                    </td>
                                                 </tr>
                                             @endforeach
 
@@ -213,12 +219,14 @@
                                                     <td>{{ $customer->remaining }}</td>
                                                     <td>{{ $customer->amount }}</td>
                                                     <td>{{ $customer->id }}</td>
-                                                    <td> <a href="{{ route('admin.finance.edit', ['id' => $customer->id]) }}"
+                                                    <td> {{--   <a href="{{ route('admin.finance.edit', ['id' => $customerse->id],['customer_id'=>$customerse->personal_id]) }}"
                                                             class="btn btn-primary btn-sm" id="edit"><i
-                                                                class="fa fa-edit"></i></a>
-                                                    <a href="{{ route('admin.finance.delete', ['id' => $customer->id]) }}"
-                                                        class="btn btn-danger btn-sm" id="edit"><i
-                                                            class="fa fa-trash"></i></a></td>
+                                                                class="fa fa-edit"></i></a> --}}
+                                                        <a href="{{ route('admin.finance.delete', ['id' => $customer->id]) }}"
+                                                            class="btn btn-danger btn-sm" id="edit"><i
+                                                                class="fa fa-trash"></i></a>
+                                                    </td>
+                                                    </td>
                                                 </tr>
                                             @endforeach
                                             {{ $customers->links() }}
@@ -308,6 +316,16 @@
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
+                                                        <label for="projectinput1">right eye with corr </label>
+                                                        <input type="text" value="" id="right_eye_with_corr"
+                                                            class="form-control" name="right_eye_with_corr">
+                                                        @error('right_eye_with_corr')
+                                                            <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
                                                         <label for="projectinput1">left eye without corr</label>
                                                         <input type="text" value="" id="left_eye_without_corr"
                                                             class="form-control" name="left_eye_without_corr">
@@ -317,16 +335,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label for="projectinput1">right eye with corr </label>
-                                                        <input type="text" value="" id="right_eye_with_corr"
-                                                            class="form-control" name="right_eye_with_corr">
-                                                        @error('right_eye_with_corr')
-                                                            <span class="text-danger">{{ $message }}</span>
-                                                        @enderror
-                                                    </div>
-                                                </div>
+
 
                                                 <div class="col-md-3">
                                                     <div class="form-group">
@@ -340,6 +349,7 @@
                                                 </div>
 
                                             </div>
+
                                         </div>
                                         <div class="row">
 
@@ -364,17 +374,7 @@
                                                     @enderror
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="projectinput1">added By </label>
-                                                    <input type="text" value="" id="addedBy"
-                                                        class="form-control" value="{{ $customerse->addedBy }}"
-                                                        name="addedBy">
-                                                    @error('addedBy')
-                                                        <span class="text-danger">{{ $message }}</span>
-                                                    @enderror
-                                                </div>
-                                            </div>
+
 
 
 

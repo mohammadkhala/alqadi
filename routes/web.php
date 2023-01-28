@@ -17,7 +17,7 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ReportController;
-
+use App\Http\Controllers\CalenderController;
 Auth::routes();
 Route::get('/', function () {
     return view('auth.login');
@@ -43,7 +43,7 @@ Route::group(['isAdminMiddleware' => ['is_admin']], function () {
 
     ////// customers routes
     Route::get('/home', [HomeController::class, 'index'])->name('home');
-
+    Route::post('/store', [HomeController::class, 'store'])->name('store');
     Route::get('/employee', [EmployeeController::class, 'index'])->name('admin.employee');
 
     Route::get('/customer', [CustomerController::class, 'index'])->name('admin.customer');
@@ -90,6 +90,8 @@ Route::group(['isAdminMiddleware' => ['is_admin']], function () {
     Route::post('register', [RegisteredUserController::class, 'store'])->name('register.store');
     Route::get('/register', [RegisteredUserController::class, 'create'])->name('registertraion')->middleware('password.confirm');
     ///
+
+
     Route::get('/transaction', [TransactionController::class, 'index'])->name('admin.transaction');
     Route::get('/transaction/create', [TransactionController::class, 'create'])->name('admin.transaction.create')->middleware('password.confirm');;
     Route::post('/transaction/store', [TransactionController::class, 'store'])->name('admin.transaction.store');

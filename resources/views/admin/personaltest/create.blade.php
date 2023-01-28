@@ -128,16 +128,7 @@
                                                         @enderror
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label for="projectinput1">added By </label>
-                                                        <input type="text" value="" id="addedBy"
-                                                            class="form-control" value="" name="addedBy">
-                                                        @error('addedBy')
-                                                            <span class="text-danger">{{ $message }}</span>
-                                                        @enderror
-                                                    </div>
-                                                </div>
+
 
 
 

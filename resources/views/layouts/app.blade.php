@@ -28,17 +28,9 @@
 
             <!-- Page Content -->
             <main>
-                @yield('content')
+                @yield('content')  @stack('scripts')
             </main>
         </div>
     </body>
 </html>
-<style>
-main{
-    background-image: url('https://ak2.picdn.net/shutterstock/videos/9057502/thumb/12.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    width: 100%;
-}</style>
+

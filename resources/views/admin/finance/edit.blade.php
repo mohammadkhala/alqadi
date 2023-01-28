@@ -44,7 +44,7 @@
                                                             <label for="projectinput1"> national id  </label>
                                                             <input type="text" value="{{$finance->customer->personal_id}}" id="customer_id"
                                                                 class="form-control"
-                                                                name="customer_id">
+                                                                name="personal_id">
                                                             @error('customer_id')
                                                                 <span class="text-danger">{{ $message }}</span>
                                                             @enderror

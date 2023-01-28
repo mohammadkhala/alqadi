@@ -2,18 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
+use App\Models\PersonalTest;
+use App\Models\Transaction;
+use Exception;
 use Illuminate\Http\Request;
 
 class ReportController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    public function index(Customer $customer)
     {
-        return view('visitreport');
+
+        $customer->load('appointments', 'personalTests', 'test')->id;
+
+        return view('visitreport', compact('customer'));
     }
 
     /**
@@ -23,7 +26,6 @@ class ReportController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -32,17 +34,27 @@ class ReportController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Customer $customer, Request $request, $id)
     {
-        //
+        try {
+
+            $this->create([
+                'personal_id' => $request->personal_id,
+                'name' => $request->name,
+                'start_date' => $request->start_date,
+                'phone' => $request->phone,
+                'address' => $request->address,
+                'note' => $request->note,
+                'clinic' => $request->clinic,
+                'gender' => $request->gender,
+            ]);
+            return redirect()->back()->with('success', 'تم اضافة مريض جديد');
+        } catch (Exception $ex) {
+            return $ex;
+        }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         //
