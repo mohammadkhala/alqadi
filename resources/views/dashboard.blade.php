@@ -143,7 +143,7 @@
                     <tr style="height: 13px;">
                         <td style="width: 8.36976%; height: 13px;">National id</td>
                         <td style="width: 19.1412%; height: 13px;">&nbsp;<input type="text" name="personal_id"
-                            value="{{ $personal_id }}">
+                            value="">
                         </td>
                         <td style="width: 12.4454%; height: 13px;">Patient name</td>
                         <td style="width: 28.7482%; height: 13px;">&nbsp;<input type="text" name="name" /></td>
@@ -204,8 +204,9 @@
                             <p>Date</p>
                         </td>
                         <td style="width: 10.2616%; height: 16px; text-align: center;">Right Without Corr.</td>
-                        <td style="width: 5.77875%; height: 16px; text-align: center;">Right With Corr.</td>
                         <td style="width: 7.67817%; height: 16px; text-align: center;">left Without Corr.</td>
+                        <td style="width: 5.77875%; height: 16px; text-align: center;">Right With Corr.</td>
+
                         <td style="width: 7.51837%; height: 16px; text-align: center;"> Left With Corr. </td>
 
 
@@ -218,10 +219,11 @@
                                 value="" /></td>
                         <td style="width: 10.2616%; height: 51px;">&nbsp;<input id="" value=""
                                 name="right_eye_without_corr" size="12px" type="text" /></td>
+                                <td style="width: 7.67817%; height: 51px;">&nbsp;<input id=""
+                                    name="left_eye_without_corr" size="15px" type="text" /></td>
                         <td style="width: 5.77875%; height: 51px;">&nbsp;<input id="" name="right_eye_with_corr"
                                 value="" size="15px" type="text" /></td>
-                        <td style="width: 7.67817%; height: 51px;">&nbsp;<input id=""
-                                name="left_eye_without_corr" size="15px" type="text" /></td>
+
                         <td style="width: 7.51837%; height: 51px;">&nbsp;<input type="text" name="left_eye_with_corr">
                         </td>
                         <td style="width: 6.82589%; height: 51px;">&nbsp;<input id="" name="correctedBy"

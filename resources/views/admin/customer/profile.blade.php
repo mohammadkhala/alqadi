@@ -99,12 +99,13 @@
 
 
                                                 <th>test id</th>
-
-                                                <th>left_eye_without_corr</th>
-                                                <th>left_eye_with_corr</th>
                                                 <th> right_eye_without_corr </th>
-
+                                                <th>left_eye_without_corr</th>
                                                 <th> right_eye_with_corr </th>
+                                                <th>left_eye_with_corr</th>
+
+
+
                                                 <th>date</th>
                                                 <th>action</th>
 
@@ -116,12 +117,12 @@
                                             @foreach ($customerse->personalTests as $customer)
                                                 <tr>
 
-                                                    <td> {{$customer->id}}</td>
+                                                    <td> {{ $customer->id }}</td>
 
                                                     <td>{{ $customer->right_eye_without_corr }}</td>
-
-                                                    <td>{{ $customer->right_eye_with_corr }}</td>
                                                     <td>{{ $customer->left_eye_without_corr }}</td>
+                                                    <td>{{ $customer->right_eye_with_corr }}</td>
+
                                                     <td>{{ $customer->left_eye_with_corr }}</td>
                                                     <td>{{ $customer->date }}</td>
                                                     <td> <a href="{{ route('admin.ptest.edit', ['id' => $customer->id]) }}"
@@ -286,7 +287,7 @@
                                         enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-body">
-                                            <h4 class="form-section"><i class="ft-home"></i>  test details </h4>
+                                            <h4 class="form-section"><i class="ft-home"></i> test details </h4>
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group" hidden>
