@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CustomerRequest;
+use App\Models\Appointment;
 use App\Models\Customer;
 use App\Models\PersonalTest;
 use App\Models\Transaction;
@@ -44,6 +45,7 @@ class CustomerController extends Controller
 
     public function checkidAction(Request $request)
     {
+        $appointments = Appointment::all();
         $customer = Customer::where('personal_id', $request->personal_id)->select('personal_id')->get();
 
         if ($customer->count() > 0) {
@@ -51,7 +53,7 @@ class CustomerController extends Controller
             return redirect()->route('admin.customer.profile', ['id' => $id]);
         } else  {
 
-            return view('admin.customer.create', ['personal_id' => $request->personal_id]);
+            return view('admin.customer.create', ['personal_id' => $request->personal_id],compact('appointments'));
         }
     }
 

@@ -45,13 +45,14 @@ Route::group(['isAdminMiddleware' => ['is_admin']], function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::post('/store', [HomeController::class, 'store'])->name('store');
     Route::get('/employee', [EmployeeController::class, 'index'])->name('admin.employee');
-
+    Route::get('/checkid', [HomeController::class, 'checkIdAction'])->name('admin.checkidAction');
     Route::get('/customer', [CustomerController::class, 'index'])->name('admin.customer');
     Route::get('/customer/create', [CustomerController::class, 'create'])->name('admin.customer.create');
     Route::post('/customer/store', [CustomerController::class, 'store'])->name('admin.customer.store');
     Route::get('/customer/edit/{id}', [CustomerController::class, 'edit'])->name('admin.customer.edit');
     Route::get('/customer/show/{id}', [CustomerController::class, 'show'])->name('admin.customer.profile');
     Route::get('/customer/checkid', [CustomerController::class, 'checkId'])->name('admin.customer.checkId');
+
     Route::get('/customer/checkidAction', [CustomerController::class, 'checkidAction'])->name('admin.customer.checkidAction');
     Route::put('/customer/update/{id}', [CustomerController::class, 'update'])->name('admin.customer.update');
     Route::get('/customer/delete/{id}', [CustomerController::class, 'destroy'])->name('admin.customer.delete');

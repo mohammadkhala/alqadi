@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
-            $table->Integer('personal_id');
+            $table->Integer('personal_id')->unsigned();
             $table->string('name');
             $table->string('clinic');
             $table->date('start_date');

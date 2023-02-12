@@ -12,7 +12,6 @@ class PersonalTest extends Model
     protected $fillable = [
         'id',
         'customer_id',
-
         'right_eye_without_corr',
         'left_eye_without_corr',
         'right_eye_with_corr',
@@ -32,7 +31,7 @@ class PersonalTest extends Model
 
     public function customer()
     {
-        return $this->belongsTo(Customer::class);
+        return $this->belongsToMany(Customer::class);
     }
     public function finance()
     {

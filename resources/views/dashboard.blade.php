@@ -102,30 +102,30 @@
         </div>
 
         <div class="card card-primary" id="printbtn">
-            <div class="card-header" >
-              <h3 class="card-title">Check Id</h3>
+            <div class="card-header">
+                <h3 class="card-title">Check Id</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form action="{{ route('admin.customer.checkidAction') }}"   method="head">
+            <form action="{{ route('admin.checkidAction') }}" method="head">
                 @csrf
-              <div class="card-body" >
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Enter National id</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" name="personal_id" placeholder="Enter id"
-                  fdprocessedid="f3s7fb">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Enter National id</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" name="personal_id"
+                            placeholder="Enter id" fdprocessedid="f3s7fb">
+                    </div>
+                    @error('personal_id')
+                        <span class="text-danger">{{ $message }} </span>
+                    @enderror
                 </div>
-                @error('personal_id')
-                <span class="text-danger">{{ $message }} </span>
-            @enderror
-              </div>
-              <!-- /.card-body -->
+                <!-- /.card-body -->
 
-              <div class="card-footer" id="printbtn">
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
+                <div class="card-footer" id="printbtn">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
             </form>
-          </div>
+        </div>
 
         <form action="{{ route('store') }}" method="post">
             @csrf
@@ -142,16 +142,23 @@
                 <tbody>
                     <tr style="height: 13px;">
                         <td style="width: 8.36976%; height: 13px;">National id</td>
-                        <td style="width: 19.1412%; height: 13px;">&nbsp;<input type="text"
-                                value="{{ $customer->personal_id }}" /></td>
+                        <td style="width: 19.1412%; height: 13px;">&nbsp;<input type="text" name="personal_id"
+                            value="{{ $personal_id }}">
+                        </td>
                         <td style="width: 12.4454%; height: 13px;">Patient name</td>
-                        <td style="width: 28.7482%; height: 13px;">&nbsp;<input type="text"  value="{{ $customer->name }}" name="name" /></td>
+                        <td style="width: 28.7482%; height: 13px;">&nbsp;<input type="text" name="name" /></td>
+                        <td style="width: 12.4454%; height: 13px;"> Mobile</td>
+                        <td style="width: 28.7482%; height: 13px;">&nbsp;<input type="text" name="phone" /></td>
+                        <td style="width: 12.4454%; height: 13px;"> start date</td>
+                        <td style="width: 28.7482%; height: 13px;">&nbsp;<input type="date" name="start_date" /></td>
                     </tr>
                     <tr style="height: 18px;">
                         <td style="width: 8.36976%; height: 18px;">Birth date</td>
-                        <td style="width: 19.1412%; height: 18px;">&nbsp; <input type="date" name="start_date" /></td>
+                        <td style="width: 19.1412%; height: 18px;">&nbsp; <input type="date" name="" /></td>
                         <td style="width: 12.4454%; height: 18px;">Gender</td>
-                        <td style="width: 28.7482%; height: 18px;">&nbsp;<input type="text" name="gender"  value="{{ $customer->gender }}" /></td>
+                        <td style="width: 28.7482%; height: 18px;">&nbsp;<input type="text" name="gender" /></td>
+                        <td style="width: 12.4454%; height: 18px;">Address</td>
+                        <td style="width: 28.7482%; height: 18px;">&nbsp;<input type="text" name="address" /></td>
                     </tr>
                 </tbody>
             </table>
@@ -160,11 +167,13 @@
                 <tbody>
                     <tr style="height: 18px;">
                         <td style="width: 16.6667%; height: 18px;">Enc.date</td>
-                        <td style="width: 16.6667%; height: 18px;">&nbsp;<input type="date" value="{{ $appoin->date }}"  /></td>
+                        <td style="width: 16.6667%; height: 18px;">&nbsp;<input type="date" name="date" value="" /></td>
                         <td style="width: 16.6667%; height: 18px;">Enc.time</td>
-                        <td style="width: 14.536%; height: 18px;">&nbsp;<input id="date-time" type="time"value="{{ $appoin->hour }}" /></td>
+                        <td style="width: 14.536%; height: 18px;">&nbsp;<input id="date-time"
+                                type="time"value="" name="hour" /></td>
                         <td style="width: 18.7974%; height: 18px;">Enc.clinic</td>
-                        <td style="width: 16.6667%; height: 18px;">&nbsp;<input type="text" name="clinic"  value="{{ $customer->clinic }}"/></td>
+                        <td style="width: 16.6667%; height: 18px;">&nbsp;<input type="text" name="clinic"
+                                value="" /></td>
                     </tr>
                     <tr>
                         <td style="width: 16.6667%;">Plan</td>
@@ -197,24 +206,25 @@
                         <td style="width: 10.2616%; height: 16px; text-align: center;">Right Without Corr.</td>
                         <td style="width: 5.77875%; height: 16px; text-align: center;">Right With Corr.</td>
                         <td style="width: 7.67817%; height: 16px; text-align: center;">left Without Corr.</td>
-                        <td style="width: 7.51837%; height: 16px; text-align: center;">
-                            <p>Left With Corr.</p>
-                        </td>
+                        <td style="width: 7.51837%; height: 16px; text-align: center;"> Left With Corr. </td>
+
+
                         <td style="width: 6.82589%; height: 16px; text-align: center;">Corrected By</td>
                     </tr>
                     <tr style="height: 51px;">
-                        <td style="width: 10%; height: 51px;">&nbsp;<input id="" name="" value="{{Auth()->user()->name}}" size="15px"
-                                type="text" /></td>
-                        <td style="width: 10%; height: 51px;">&nbsp;<input size="10px" type="date"  value="{{$test->date}}"/></td>
-                        <td style="width: 10.2616%; height: 51px;">&nbsp;<input id="" value="{{$test->right_eye_without_corr}}"
+                        <td style="width: 10%; height: 51px;">&nbsp;<input id="" name="addedBy"
+                                value="{{ Auth()->user()->name }}" size="15px" type="text" /></td>
+                        <td style="width: 10%; height: 51px;">&nbsp;<input size="10px" type="date"
+                                value="" /></td>
+                        <td style="width: 10.2616%; height: 51px;">&nbsp;<input id="" value=""
                                 name="right_eye_without_corr" size="12px" type="text" /></td>
-                        <td style="width: 5.77875%; height: 51px;">&nbsp;<input id="" name="" value="{{$test->right_eye_with_corr}}"
-                                size="15px" type="text" /></td>
-                        <td style="width: 7.67817%; height: 51px;">&nbsp;<input id="" name=""value="{{$test->left_eye_without_corr}}"
-                                size="15px" type="text" /></td>
-                        <td style="width: 7.51837%; height: 51px;">&nbsp;<input id="" name=" " value="{{$test->left_eye_with_corr}}"
-                                size="15px" type="text" /></td>
-                        <td style="width: 6.82589%; height: 51px;">&nbsp;<input id="" name=""value="{{$test->correctedBy}}"
+                        <td style="width: 5.77875%; height: 51px;">&nbsp;<input id="" name="right_eye_with_corr"
+                                value="" size="15px" type="text" /></td>
+                        <td style="width: 7.67817%; height: 51px;">&nbsp;<input id=""
+                                name="left_eye_without_corr" size="15px" type="text" /></td>
+                        <td style="width: 7.51837%; height: 51px;">&nbsp;<input type="text" name="left_eye_with_corr">
+                        </td>
+                        <td style="width: 6.82589%; height: 51px;">&nbsp;<input id="" name="correctedBy"
                                 size="15px" type="text" /></td>
                     </tr>
                 </tbody>
@@ -244,6 +254,9 @@
 
             <p>Signature:</p>
 
+            <button type="submit" class="btn btn-primary">
+                <i class="la la-check-square-o"></i> حفظ
+            </button>
 
         </form>
 

@@ -14,7 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('p_tests', function (Blueprint $table) {
-            $table->unsignedBigInteger('customer_id');
+            $table-> id();
+            $table->foreignId('customer_id')->index();
             $table->foreign('customer_id')->references('id')->on('customers')->onUpdate('cascade')
             ->onDelete('cascade');
 
@@ -26,9 +27,7 @@ return new class extends Migration
             // $table->integer('month');
             $table->text('correctedBy')->nullable();
              $table->text('addedBy');
-            $table->integer('cost');
-            $table-> id();
-
+            $table->integer('cost')->nullable();
             $table->timestamps();
         });
     }

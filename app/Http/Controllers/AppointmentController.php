@@ -44,7 +44,7 @@ class AppointmentController extends Controller
         try {
             $request->validate([
                 'customer_id' => 'required|exists:customers,personal_id',
-                'date' => 'required|date',
+
                 'hour' => 'required',
                 'clinic' => 'required|string',
                 'optimimstic' => 'required|string',
@@ -52,7 +52,7 @@ class AppointmentController extends Controller
             ]);
             $appointment = Appointment::create([
                 'customer_id' => Customer::where('personal_id', $request->customer_id)->first()->id,
-                'date' => $request->date,
+
                 'note' => $request->note,
                 'hour' => $request->hour,
                 'clinic' => $request->clinic,

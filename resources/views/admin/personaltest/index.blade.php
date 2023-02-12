@@ -47,7 +47,7 @@
                 @foreach ($ptests as $key => $ptest)
                     <tr>
                         <td>{{ $key = $key + 1 }}</td>
-                        <td>{{ $ptest->customer->personal_id }}</td>
+                        <td>{{ $ptest->customer_id }}</td>
                         <td>{{ $ptest->right_eye_without_corr }} </td>
                         <td>{{ $ptest->left_eye_without_corr }}</td>
                         <td>{{ $ptest->right_eye_with_corr }} </td>
