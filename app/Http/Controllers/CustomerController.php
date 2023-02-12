@@ -80,7 +80,6 @@ class CustomerController extends Controller
             ]);
             return redirect()->back()->with('success', 'تم اضافة مريض جديد');
         } catch (\Throwable $th) {
-            return $th;
             return redirect()->back()->with('error', 'حدث خطأ يرجى اعادة المحاول');
         }
     }
@@ -102,7 +101,8 @@ class CustomerController extends Controller
             //dd($customer);
             return view('admin.customer.profile', compact('customerse','customers','ptest','trans'));
         } catch (Exception $ex) {
-            return $ex;
+            return redirect()->back()->with('error', 'حدث خطأ يرجى اعادة المحاول');
+
         }
     }
 

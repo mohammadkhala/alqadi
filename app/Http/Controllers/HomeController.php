@@ -104,7 +104,7 @@ class HomeController extends Controller
             return redirect()->back()->with('success', 'تم اضافة مريض جديد');
         } catch (\Throwable $th) {
             //   dd($request);
-            return $th;
+            //return $th;
             return redirect()->back()->with('error', 'حدث خطأ يرجى اعادة المحاول');
         }
     }

@@ -48,6 +48,9 @@
 @section('title_page2')
     لوحة التحكم
 @endsection
+@php
+ $personal_id
+@endphp
 @section('content')
     <div class="container-fluid">
         <div class="row" id="printbtn">
@@ -143,7 +146,7 @@
                     <tr style="height: 13px;">
                         <td style="width: 8.36976%; height: 13px;">National id</td>
                         <td style="width: 19.1412%; height: 13px;">&nbsp;<input type="text" name="personal_id"
-                            value="">
+                            value="{{$personal_id}}">
                         </td>
                         <td style="width: 12.4454%; height: 13px;">Patient name</td>
                         <td style="width: 28.7482%; height: 13px;">&nbsp;<input type="text" name="name" /></td>
@@ -167,13 +170,18 @@
                 <tbody>
                     <tr style="height: 18px;">
                         <td style="width: 16.6667%; height: 18px;">Enc.date</td>
-                        <td style="width: 16.6667%; height: 18px;">&nbsp;<input type="date" name="date" value="" /></td>
+                        <td style="width: 16.6667%; height: 18px;">&nbsp;<input type="date" id="date" name="date" value="" /></td>
                         <td style="width: 16.6667%; height: 18px;">Enc.time</td>
                         <td style="width: 14.536%; height: 18px;">&nbsp;<input id="date-time"
                                 type="time"value="" name="hour" /></td>
                         <td style="width: 18.7974%; height: 18px;">Enc.clinic</td>
-                        <td style="width: 16.6667%; height: 18px;">&nbsp;<input type="text" name="clinic"
-                                value="" /></td>
+                        <td style="width: 16.6667%; height: 18px;">&nbsp;
+                            <select name="clinic" id="dog-names">
+                                <option value="rigatoni">Refraction</option>
+                              <option value="dave">Hard Contact Lens</option>
+                              <option value="pumpernickel">Soft Contact Lens</option>
+
+                            </select></td>
                     </tr>
                     <tr>
                         <td style="width: 16.6667%;">Plan</td>
@@ -243,10 +251,10 @@
                     </tr>
                     <tr style="height: 18px;">
                         <td style="width: 33.3333%; height: 18px;">&nbsp;
-                            <textarea name="" id="" cols="50" rows="20"></textarea>
+                            <textarea name="note" id="" cols="50" rows="20"></textarea>
                         </td>
                         <td style="width: 33.3333%; height: 18px;">&nbsp;
-                            <textarea name="" id="" cols="50" rows="20"></textarea>
+                            <textarea name="note" id="" cols="50" rows="20"></textarea>
                         </td>
                     </tr>
 
@@ -256,7 +264,7 @@
 
             <p>Signature:</p>
 
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" id="printbtn" class="btn btn-primary">
                 <i class="la la-check-square-o"></i> حفظ
             </button>
 
@@ -451,31 +459,13 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('https://unpkg.com/sweetalert/dist/sweetalert.min.js') }}"></script>
 
-    <script>
-        $(document).on("click", "#delete", function(e) {
-            e.preventDefault();
-            var link = $(this).attr("href");
-            Swal.fire({
-                title: 'هل تريد تأكيد الحذف
-                icon: 'question',
-                iconHtml: '؟',
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'نعم',
-                cancelButtonText: 'لا',
-                showCancelButton: true,
-                showCloseButton: true
 
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = link;
-                    Swal.fire(
-                        'تم الحذف!',
-                        'تم الحذف بنجاح.',
-                        'نجاح'
-                    )
-                }
-            });
-        });
-    </script>
+    <script>
+        var date = new Date();
+        var currentDate = date.toISOString().slice(0,10);
+        var currentTime = date.getHours() + ':' + date.getMinutes();
+
+        document.getElementById('date').value = currentDate;
+        </script>
+
 @endsection
